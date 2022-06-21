@@ -1,5 +1,8 @@
 package br.com.dashwork.application.api.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Service;
@@ -26,5 +29,31 @@ public class ClienteServiceImplements implements ClienteService {
 		log.info("[finish] ClienteServiceImplements - adiciona");
 		return novoCliente;
 	}
+
+	@Override
+	public List<Cliente> buscaTodos() {
+		log.info("[start] ClienteServiceImplements - buscaTodos");
+		List<Cliente> listaCliente = clienteRepository.buscaTodos();
+		log.info("[finish] ClienteServiceImplements - buscaTodos");
+		return listaCliente;
+	}
+
+	@Override
+	public void atualiza(Long id, Cliente cliente) {
+		log.info("[start] ClienteServiceImplements - atualiza");
+		Cliente clienteAtualizado = clienteRepository.getById(cliente);
+		clienteAtualizado.atualiza(cliente);
+		clienteRepository.save(clienteAtualizado);
+		log.info("[finish] ClienteServiceImplements - atualiza");
+		
+	}
+	
+	@Override
+	public Optional<Cliente> buscaPorId(Long id) {
+		log.info("[Inicia] ClienteService - buscaPorId ");
+		Optional<Cliente> clientePorId = clienteRepository.findById(id);
+		clientePorId.orElseThrow(() -> new IllegalArgumentException("cliente não encontrado!"));
+		log.info("[Finaliza] ClienteService - buscaPorId ");
+		return clientePorId;
 	
 }

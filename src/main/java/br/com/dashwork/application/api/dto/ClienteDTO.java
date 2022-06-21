@@ -1,5 +1,7 @@
 package br.com.dashwork.application.api.dto;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import br.com.dashwork.application.api.domain.Cliente;
 import lombok.Getter;
 
@@ -13,6 +15,10 @@ public class ClienteDTO {
 		this.id = cliente.getId();
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
+	}
+
+	public static List<ClienteDTO> parseListDTO(List<Cliente> listaCliente) {
+		return listaCliente.stream().map(ClienteDTO::new).collect(Collectors.toList());
 	}
 
 }
