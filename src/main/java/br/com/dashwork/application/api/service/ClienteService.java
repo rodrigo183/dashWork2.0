@@ -15,5 +15,7 @@ public interface ClienteService {
 
 	Optional<Cliente> buscaPorId(Long id);
 
+	void remove(Long id);
+
 
 }

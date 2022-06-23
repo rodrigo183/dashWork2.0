@@ -10,5 +10,6 @@ public interface ClienteRepository {
 	Optional<Cliente> buscaClientePorId (Long id);
 	List<Cliente> buscaTodos();
 	Cliente getById(Long id);
+	void remove(Long id);
 
 }

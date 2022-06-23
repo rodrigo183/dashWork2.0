@@ -1,6 +1,5 @@
 package br.com.dashwork.application.infra;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Repository;
@@ -38,7 +37,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	@Override
 	public List<Cliente> buscaTodos() {
 		log.info("[start] ClienteRepositoryImplements - buscaTodos");
-		List<Cliente> listaTodos = new ArrayList<Cliente>();
+		List<Cliente> listaTodos = clienteRepository.findAll();
 		log.info("[finish] ClienteRepositoryImplements - buscaTodos");
 		return listaTodos;
 	}
@@ -49,6 +48,14 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 		Cliente clienteEncontrado = clienteRepository.getById(id);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");
 		return clienteEncontrado;
+	}
+
+	@Override
+	public void remove(Long id) {
+		log.info("[start] ClienteRepositoryImplements - deleta");
+		clienteRepository.deleteById(id);
+		log.info("[finish] ClienteRepositoryImplements - adiciona");
+		
 	}
 
 }

@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,10 @@ public interface ClienteAPI {
 	@PatchMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)
 	void atualiza (@PathVariable Long id, @RequestBody @Valid ClienteFormAtualiza clienteForm);
+	
+	@DeleteMapping("/{id}")
+	@ResponseStatus (value = HttpStatus.NO_CONTENT)
+	void deleta(@PathVariable Long id);
 }
 
 

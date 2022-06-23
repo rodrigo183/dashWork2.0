@@ -1,4 +1,5 @@
 package br.com.dashwork.application.api.domain;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,22 +23,12 @@ public class Cliente {
 	@NotNull
 	private String nome;
 	@NotNull
+	@Column(unique = true)
 	private String telefone;
-	@NotNull
-	private boolean ativo = true;
 	
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
 	}
-	
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-	
 	
 }

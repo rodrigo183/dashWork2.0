@@ -44,7 +44,15 @@ public class ClienteController implements ClienteAPI {
 	public void atualiza(Long id, @Valid ClienteFormAtualiza clienteForm) {
 		log.info("[start] ClienteServiceImplements - atualiza");
 		clienteService.atualiza( id, clienteForm.toEntidade());
-		log.info("[start] ClienteServiceImplements - atualiza");
+		log.info("[finish] ClienteServiceImplements - atualiza");
+	}
+
+	@Override
+	public void deleta(Long id) {
+		log.info("[start] ClienteServiceImplements - deleta");
+		clienteService.remove(id);
+		log.info("[finish] ClienteServiceImplements - deleta");
+		
 	}
 
 	 
