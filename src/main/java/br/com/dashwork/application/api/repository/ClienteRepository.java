@@ -9,6 +9,6 @@ public interface ClienteRepository {
 	Cliente salva(Cliente cliente);
 	Optional<Cliente> buscaClientePorId (Long id);
 	List<Cliente> buscaTodos();
-	void save(Cliente clienteAtualizado);
+	Cliente getById(Long id);
 
 }

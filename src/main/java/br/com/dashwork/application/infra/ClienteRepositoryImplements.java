@@ -29,7 +29,9 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 
 	@Override
 	public Optional<Cliente> buscaClientePorId(Long id) {
+		log.info("[start] ClienteRepositoryImplements - buscaPorId");
 		Optional<Cliente> cliente = clienteRepository.findById(id);
+		log.info("[finish] ClienteRepositoryImplements - buscaPorId");
 		return cliente;
 	}
 
@@ -42,9 +44,11 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	}
 
 	@Override
-	public void save(Cliente clienteAtualizado) {
-		
-		
+	public Cliente getById(Long id) {
+		log.info("[start] ClienteRepositoryImplements - adiciona");
+		Cliente clienteEncontrado = clienteRepository.getById(id);
+		log.info("[finish] ClienteRepositoryImplements - adiciona");
+		return clienteEncontrado;
 	}
 
 }

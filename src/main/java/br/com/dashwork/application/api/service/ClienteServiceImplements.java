@@ -39,21 +39,23 @@ public class ClienteServiceImplements implements ClienteService {
 	}
 
 	@Override
-	public void atualiza(Long id, Cliente cliente) {
-		log.info("[start] ClienteServiceImplements - atualiza");
-		Cliente clienteAtualizado = clienteRepository.getById(cliente);
-		clienteAtualizado.atualiza(cliente);
-		clienteRepository.save(clienteAtualizado);
-		log.info("[finish] ClienteServiceImplements - atualiza");
-		
+	public void atualiza(Long id, Cliente entidade) {
+		log.info("[Inicia] ClienteService - atualiza");
+		buscaPorId(id);
+		Cliente clienteAtualizado = clienteRepository.getById(id);
+		clienteAtualizado.atualiza(entidade);
+		clienteRepository.salva(clienteAtualizado);
+		log.info("[Finaliza] ClienteService - atualiza");
 	}
-	
+
 	@Override
 	public Optional<Cliente> buscaPorId(Long id) {
 		log.info("[Inicia] ClienteService - buscaPorId ");
-		Optional<Cliente> clientePorId = clienteRepository.findById(id);
+		Optional<Cliente> clientePorId = clienteRepository.buscaClientePorId(id);
 		clientePorId.orElseThrow(() -> new IllegalArgumentException("cliente não encontrado!"));
 		log.info("[Finaliza] ClienteService - buscaPorId ");
 		return clientePorId;
+	}
+
 	
 }

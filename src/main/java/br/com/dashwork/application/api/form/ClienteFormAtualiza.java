@@ -1,10 +1,12 @@
 package br.com.dashwork.application.api.form;
-
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import br.com.dashwork.application.api.domain.Cliente;
-
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 public class ClienteFormAtualiza {
 
 	@NotEmpty(message = "Campo deve ser preenchido.") @Size(min = 3)
