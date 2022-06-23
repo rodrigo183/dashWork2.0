@@ -24,7 +24,7 @@ public class Cliente {
 	@NotNull
 	private String telefone;
 	@NotNull
-	private boolean ativo;
+	private boolean ativo = true;
 	
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
