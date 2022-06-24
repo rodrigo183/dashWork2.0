@@ -1,5 +1,4 @@
 package br.com.dashwork.application.api.service;
-
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -10,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-
 @Log4j2
 @AllArgsConstructor
 @Getter

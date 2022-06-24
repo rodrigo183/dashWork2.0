@@ -14,9 +14,8 @@ public class ClienteDTO {
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
 	}
-
+	
 	public static List<ClienteDTO> parseListDTO(List<Cliente> listaCliente) {
 		return listaCliente.stream().map(ClienteDTO::new).collect(Collectors.toList());
 	}
-
 }

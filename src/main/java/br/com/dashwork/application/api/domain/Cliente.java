@@ -17,7 +17,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 public class Cliente {
-	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
@@ -30,5 +29,4 @@ public class Cliente {
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
 	}
-	
 }

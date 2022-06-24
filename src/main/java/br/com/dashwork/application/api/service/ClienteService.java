@@ -1,12 +1,9 @@
 package br.com.dashwork.application.api.service;
-
 import java.util.List;
 import java.util.Optional;
-
 import br.com.dashwork.application.api.domain.Cliente;
-
 public interface ClienteService {
-
+	
 	Cliente salva(Cliente cliente);
 
 	List<Cliente> buscaTodos();
@@ -16,6 +13,5 @@ public interface ClienteService {
 	Optional<Cliente> buscaPorId(Long id);
 
 	void remove(Long id);
-
 
 }

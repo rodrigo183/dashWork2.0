@@ -1,14 +1,10 @@
 package br.com.dashwork.application.api.controller;
-
 import java.net.URI;
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import br.com.dashwork.application.api.ClienteAPI;
 import br.com.dashwork.application.api.domain.Cliente;
 import br.com.dashwork.application.api.dto.ClienteDTO;
@@ -31,7 +27,7 @@ public class ClienteController implements ClienteAPI {
 		log.info("[finish] ClienteServiceImplements - cadastra");
 		return ResponseEntity.created(uri).body(new ClienteDTO(clienteSalvo));
 	 }
-
+	 
 	@Override
 	public List<ClienteDTO> lista() {
 		log.info("[start] ClienteServiceImplements - buscaTodos");
@@ -39,21 +35,18 @@ public class ClienteController implements ClienteAPI {
 		log.info("[finish] ClienteServiceImplements - buscaTodos");
 		return  ClienteDTO.parseListDTO(cliente);
 	}
-
+	
 	@Override
 	public void atualiza(Long id, @Valid ClienteFormAtualiza clienteForm) {
 		log.info("[start] ClienteServiceImplements - atualiza");
 		clienteService.atualiza( id, clienteForm.toEntidade());
 		log.info("[finish] ClienteServiceImplements - atualiza");
 	}
-
+	
 	@Override
 	public void deleta(Long id) {
 		log.info("[start] ClienteServiceImplements - deleta");
 		clienteService.remove(id);
 		log.info("[finish] ClienteServiceImplements - deleta");
-		
-	}
-
-	 
+	} 
 }
