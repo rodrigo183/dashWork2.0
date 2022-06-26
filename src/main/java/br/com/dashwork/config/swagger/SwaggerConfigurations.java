@@ -13,7 +13,7 @@ public class SwaggerConfigurations {
 	public Docket DashWorkApi() {
 	return	new Docket(DocumentationType.SWAGGER_2)
 			.select()
-			.apis(RequestHandlerSelectors.basePackage("br.com.dashwork2.0"))
+			.apis(RequestHandlerSelectors.basePackage("br.com.dashwork2"))
 			.paths(PathSelectors.ant("/**"))
 			.build();
 	}
