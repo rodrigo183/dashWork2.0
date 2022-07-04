@@ -27,6 +27,6 @@ public class Cliente {
 	
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
-		this.telefone = cliente.getTelefone(); 
+		this.telefone = cliente.getTelefone();
 	}
 }
