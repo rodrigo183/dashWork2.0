@@ -1,7 +1,8 @@
-package br.com.dashwork.application;
+package br.com.dashwork;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import br.com.dashwork.application.ClienteApplication;
+
+import br.com.dashwork.ClienteApplication;
 @SpringBootApplication
 public class ClienteApplication {
 

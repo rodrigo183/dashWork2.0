@@ -1,4 +1,4 @@
-package br.com.dashwork.application.api.domain;
+package br.com.dashwork.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +27,6 @@ public class Cliente {
 	
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
-		this.telefone = cliente.getTelefone();
+		this.telefone = cliente.getTelefone(); 
 	}
 }

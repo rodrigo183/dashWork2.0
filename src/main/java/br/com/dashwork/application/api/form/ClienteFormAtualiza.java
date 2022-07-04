@@ -2,7 +2,8 @@ package br.com.dashwork.application.api.form;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import br.com.dashwork.application.api.domain.Cliente;
+
+import br.com.dashwork.domain.Cliente;
 import lombok.Getter;
 import lombok.Setter;
 @Getter

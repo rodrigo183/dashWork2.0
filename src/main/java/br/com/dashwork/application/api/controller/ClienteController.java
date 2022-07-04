@@ -6,11 +6,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 import br.com.dashwork.application.api.ClienteAPI;
-import br.com.dashwork.application.api.domain.Cliente;
 import br.com.dashwork.application.api.dto.ClienteDTO;
 import br.com.dashwork.application.api.form.ClienteForm;
 import br.com.dashwork.application.api.form.ClienteFormAtualiza;
-import br.com.dashwork.application.api.service.ClienteService;
+import br.com.dashwork.application.service.ClienteService;
+import br.com.dashwork.domain.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
