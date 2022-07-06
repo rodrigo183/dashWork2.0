@@ -1,8 +1,11 @@
 package br.com.dashwork.application.api;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,4 +21,7 @@ public interface ServicoAPI {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	ResponseEntity<ServicoDTO> cadastra(@RequestBody @Valid ServicoForm servicoForm, UriComponentsBuilder uriBuilder);
 
+	@GetMapping
+	@ResponseStatus(code = HttpStatus.OK)
+	List<ServicoDTO> listaServicos();
 }

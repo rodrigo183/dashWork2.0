@@ -1,5 +1,6 @@
 package br.com.dashwork.application.api.controller;
 import java.net.URI;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -27,6 +28,14 @@ public class ServicoController implements ServicoAPI {
 		URI uri = uriBuilder.path("/produto/{id}").buildAndExpand(servicoSalvo.getId()).toUri();
 		log.info("[Finaliza] ServicoController - cadastra");
 		return ResponseEntity.created(uri).body(new ServicoDTO(servicoSalvo));
+	}
+
+	@Override
+	public List<ServicoDTO> listaServicos() {
+		log.info("[Inicia] ServicoController - listaServicos");
+		List<Servico> listaServicos = servicoService.listaServicos();
+		log.info("[Finaliza] ServicoController - listaServicos");
+		return ServicoDTO.parseListDTO(listaServicos);
 	}
 
 }

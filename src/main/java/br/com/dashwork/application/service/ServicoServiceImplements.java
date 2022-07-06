@@ -1,4 +1,6 @@
 package br.com.dashwork.application.service;
+import java.util.List;
+
 import javax.validation.Valid;
 import org.springframework.stereotype.Service;
 import br.com.dashwork.application.repository.ServicoRepository;
@@ -22,5 +24,13 @@ public class ServicoServiceImplements implements ServicoService {
 		Servico novoServico = servicoRepository.save(servico);
 		log.info("[Finaliza] ServicoService - salva");
 		return novoServico;
+	}
+
+	@Override
+	public List<Servico> listaServicos() {
+		log.info("[Inicia] ServicoService - listaServicos ");
+		List<Servico> todosServicos = servicoRepository.findAll();
+		log.info("[Finaliza] ServicoService - listaServicos");
+		return todosServicos;
 	}
 }
