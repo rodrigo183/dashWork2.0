@@ -1,21 +1,20 @@
-package br.com.dashwork.application.service;
+package br.com.dashwork.infra;
 import javax.validation.Valid;
-import org.springframework.stereotype.Service;
-import br.com.dashwork.application.repository.ServicoRepository;
+import org.springframework.stereotype.Repository;
+import br.com.dashwork.application.service.ServicoService;
 import br.com.dashwork.domain.Servico;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-@Log4j2
-@Service
 @AllArgsConstructor
+@Log4j2
 @Getter
 @Setter
-public class ServicoServiceImplements implements ServicoService {
+@Repository
+public class ServicoRepositoryImplements implements ServicoService {
+	private ServicoRepositoryDB servicoRepository;
 
-	private ServicoRepository servicoRepository;
-	   
 	@Override
 	public Servico salva(@Valid Servico servico) {
 		log.info("[Inicia] ServicoService - salva ");
@@ -23,4 +22,5 @@ public class ServicoServiceImplements implements ServicoService {
 		log.info("[Finaliza] ServicoService - salva");
 		return novoServico;
 	}
+
 }

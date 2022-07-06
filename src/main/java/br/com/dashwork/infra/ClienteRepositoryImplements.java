@@ -1,8 +1,8 @@
-package br.com.dashwork.application.infra;
+package br.com.dashwork.infra;
 import java.util.List;
 import java.util.Optional;
+import javax.validation.Valid;
 import org.springframework.stereotype.Repository;
-
 import br.com.dashwork.application.repository.ClienteRepository;
 import br.com.dashwork.domain.Cliente;
 import lombok.AllArgsConstructor;
@@ -19,7 +19,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	private ClienteRepositoryDB clienteRepository;
 	
 	@Override
-	public Cliente salva(Cliente cliente) {
+	public Cliente salva(@Valid Cliente cliente) {
 		log.info("[start] ClienteRepositoryImplements - adiciona");
 		Cliente novoCliente = clienteRepository.save(cliente);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");

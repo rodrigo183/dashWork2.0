@@ -1,4 +1,4 @@
-package br.com.dashwork.application.infra;
+package br.com.dashwork.infra;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
