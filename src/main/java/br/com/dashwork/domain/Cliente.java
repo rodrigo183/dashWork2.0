@@ -1,7 +1,5 @@
 package br.com.dashwork.domain;
 import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -17,7 +15,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Document
 public class Cliente {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id
 	private Long id;
 	@NotNull
 	private String nome;
