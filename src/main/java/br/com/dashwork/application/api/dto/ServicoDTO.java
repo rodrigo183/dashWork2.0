@@ -1,7 +1,6 @@
 package br.com.dashwork.application.api.dto;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import br.com.dashwork.domain.Aparelho;
 import br.com.dashwork.domain.Servico;
 import lombok.Getter;

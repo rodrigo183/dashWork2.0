@@ -1,7 +1,8 @@
 package br.com.dashwork.infra;
 import java.util.List;
-
 import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import br.com.dashwork.application.service.ServicoService;
 import br.com.dashwork.domain.Servico;
@@ -15,6 +16,8 @@ import lombok.extern.log4j.Log4j2;
 @Setter
 @Repository
 public class ServicoRepositoryImplements implements ServicoService {
+	
+	@Autowired
 	private ServicoRepositoryDB servicoRepository;
 
 	@Override

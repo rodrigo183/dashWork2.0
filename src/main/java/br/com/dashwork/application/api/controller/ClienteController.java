@@ -2,6 +2,8 @@ package br.com.dashwork.application.api.controller;
 import java.net.URI;
 import java.util.List;
 import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -17,6 +19,8 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @Log4j2
 public class ClienteController implements ClienteAPI {
+	
+	@Autowired
 	private ClienteService clienteService;
 	
 	 @Override

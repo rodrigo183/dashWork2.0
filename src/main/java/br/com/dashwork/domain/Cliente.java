@@ -1,10 +1,10 @@
 package br.com.dashwork.domain;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
+@Document
 public class Cliente {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,5 +28,9 @@ public class Cliente {
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
+	}
+
+	public Long getId() {
+		return null;
 	}
 }

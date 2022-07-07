@@ -2,8 +2,9 @@ package br.com.dashwork.application.service;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
-import org.springframework.stereotype.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import br.com.dashwork.application.repository.ClienteRepository;
 import br.com.dashwork.domain.Cliente;
 import lombok.AllArgsConstructor;
@@ -17,6 +18,7 @@ import lombok.extern.log4j.Log4j2;
 @Service
 public class ClienteServiceImplements implements ClienteService {
 
+	@Autowired
 	private ClienteRepository clienteRepository;
 
 	@Override

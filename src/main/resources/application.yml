@@ -1,14 +1,6 @@
-server:
-  servlet:
-    context-path: /dashwork/api
-
 spring:
   data:
     mongodb:
-      authentication-database: admin
-      uri: ${MONGO_DB_URI:mongodb+srv://dashWorkDev:murilo1234@clusterdashwork.vnnsq.mongodb.net/test}
-      auto-index-creation: true
-      
-      springdoc:
-      swagger-ui:
-      path: /swagger
+      uri: mongodb://clusterdashwork.vnnsq.mongodb.net/dashwork
+      username: dashWorkDev
+      password: murilo1234
