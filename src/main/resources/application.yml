@@ -1,13 +1,7 @@
+      
 spring:
   data:
     mongodb:
-      uri: mongodb://clusterdashwork.vnnsq.mongodb.net/dashwork
-      username: dashWorkDev
-      password: murilo1234
-      
-      spring:
-  data:
-    mongodb:
       authentication-database: admin
-      uri: ${MONGO_DB_URI:mongodb+srv://produdoroDevUser:8iN1yCBRKXMRZa1A@cluster0.bbnoj.mongodb.net/produdoroDevDB?retryWrites=true&w=majority}
+      uri: ${MONGO_DB_URI:mongodb+srv://dashWorkDev:murilo1234@clusterdashwork.vnnsq.mongodb.net/test}
       auto-index-creation: true 

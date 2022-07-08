@@ -1,9 +1,12 @@
 package br.com.dashwork.infra;
 import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+
 import br.com.dashwork.application.service.ServicoService;
 import br.com.dashwork.domain.Servico;
 import lombok.AllArgsConstructor;
@@ -15,6 +18,7 @@ import lombok.extern.log4j.Log4j2;
 @Getter
 @Setter
 @Repository
+@Primary
 public class ServicoRepositoryImplements implements ServicoService {
 	
 	@Autowired
