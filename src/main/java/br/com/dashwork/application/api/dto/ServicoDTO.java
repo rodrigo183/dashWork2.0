@@ -1,5 +1,6 @@
 package br.com.dashwork.application.api.dto;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import br.com.dashwork.domain.Aparelho;
 import br.com.dashwork.domain.Servico;
@@ -7,8 +8,8 @@ import lombok.Getter;
 @Getter
 public class ServicoDTO {
 
-	private Long id;
-	private Long clienteId;
+	private UUID id;
+	private UUID clienteId;
 	private Aparelho aparelho;
 	
 	public ServicoDTO(Servico servico) {

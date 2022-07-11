@@ -1,4 +1,6 @@
 package br.com.dashwork.domain;
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
@@ -16,7 +18,8 @@ import lombok.Setter;
 @Document
 public class Cliente {
 	@Id
-	private Long id;
+	@Builder.Default
+	private UUID id = UUID.randomUUID();
 	@NotNull
 	private String nome;
 	@NotNull
@@ -26,9 +29,5 @@ public class Cliente {
 	public void atualiza(Cliente cliente) {
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
-	}
-
-	public Long getId() {
-		return null;
 	}
 }

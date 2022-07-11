@@ -1,4 +1,6 @@
 package br.com.dashwork.application.api.form;
+import java.util.UUID;
+
 import javax.validation.Valid;
 import br.com.dashwork.domain.Aparelho;
 import br.com.dashwork.domain.Cliente;
@@ -8,7 +10,7 @@ public class ServicoForm {
 
 	@Valid
 	private Aparelho aparelho;
-	private Long clienteId;
+	private UUID clienteId;
 			
 	public Servico toEntidade() {
 		Cliente cliente = new Cliente();

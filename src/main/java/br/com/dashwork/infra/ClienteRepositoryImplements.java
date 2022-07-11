@@ -1,6 +1,8 @@
 package br.com.dashwork.infra;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +32,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	}
 
 	@Override
-	public Optional<Cliente> buscaClientePorId(Long id) {
+	public Optional<Cliente> buscaClientePorId(UUID id) {
 		log.info("[start] ClienteRepositoryImplements - buscaPorId");
 		Optional<Cliente> cliente = clienteRepository.findById(id);
 		log.info("[finish] ClienteRepositoryImplements - buscaPorId");
@@ -46,7 +48,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	}
 
 	@Override
-	public Cliente getById(Long id) {
+	public Cliente getById(UUID id) {
 		log.info("[start] ClienteRepositoryImplements - adiciona");
 		Cliente clienteEncontrado = clienteRepository.getById(id);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");
@@ -54,7 +56,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	}
 
 	@Override
-	public void remove(Long id) {
+	public void remove(UUID id) {
 		log.info("[start] ClienteRepositoryImplements - deleta");
 		clienteRepository.deleteById(id);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");

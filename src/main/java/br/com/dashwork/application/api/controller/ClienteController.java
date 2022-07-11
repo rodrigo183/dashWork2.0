@@ -1,6 +1,8 @@
 package br.com.dashwork.application.api.controller;
 import java.net.URI;
 import java.util.List;
+import java.util.UUID;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +43,14 @@ public class ClienteController implements ClienteAPI {
 	}
 	
 	@Override
-	public void atualiza(Long id, @Valid ClienteFormAtualiza clienteForm) {
+	public void atualiza(UUID id, @Valid ClienteFormAtualiza clienteForm) {
 		log.info("[start] ClienteServiceImplements - atualiza");
 		clienteService.atualiza( id, clienteForm.toEntidade());
 		log.info("[finish] ClienteServiceImplements - atualiza");
 	}
 	
 	@Override
-	public void deleta(Long id) {
+	public void deleta(UUID id) {
 		log.info("[start] ClienteServiceImplements - deleta");
 		clienteService.remove(id);
 		log.info("[finish] ClienteServiceImplements - deleta");

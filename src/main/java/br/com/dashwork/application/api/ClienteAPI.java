@@ -1,5 +1,7 @@
 package br.com.dashwork.application.api;
 import java.util.List;
+import java.util.UUID;
+
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,11 +30,11 @@ public interface ClienteAPI {
 	
 	@PatchMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)
-	void atualiza (@PathVariable Long id, @RequestBody @Valid ClienteFormAtualiza clienteForm);
+	void atualiza (@PathVariable UUID id, @RequestBody @Valid ClienteFormAtualiza clienteForm);
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)
-	void deleta(@PathVariable Long id);
+	void deleta(@PathVariable UUID id);
 }
 
 

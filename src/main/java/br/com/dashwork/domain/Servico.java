@@ -1,4 +1,6 @@
 package br.com.dashwork.domain;
+import java.util.UUID;
+
 import javax.persistence.Id;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -17,7 +19,8 @@ import lombok.Setter;
 public class Servico {
 
 	@Id
-	private Long Id;
+	@Builder.Default
+	private UUID Id = UUID.randomUUID();
 	@NotNull
 	private Cliente cliente;
 	@Valid

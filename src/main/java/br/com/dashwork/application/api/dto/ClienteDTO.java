@@ -1,12 +1,13 @@
 package br.com.dashwork.application.api.dto;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import br.com.dashwork.domain.Cliente;
 import lombok.Getter;
 @Getter
 public class ClienteDTO {
-	private Long id;
+	private UUID id;
 	private String nome;
 	private String telefone;
 
