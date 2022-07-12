@@ -1,5 +1,5 @@
 package br.com.dashwork.application.api.form;
 
-public class ServicoFormAtualiza {
+public class ServicoAtualizaRequest {
 
 }

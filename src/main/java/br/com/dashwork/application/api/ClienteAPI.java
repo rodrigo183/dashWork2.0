@@ -14,23 +14,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriComponentsBuilder;
-import br.com.dashwork.application.api.dto.ClienteDTO;
-import br.com.dashwork.application.api.form.ClienteForm;
-import br.com.dashwork.application.api.form.ClienteFormAtualiza;
+import br.com.dashwork.application.api.dto.ClienteResponse;
+import br.com.dashwork.application.api.form.ClienteRequest;
+import br.com.dashwork.application.api.form.ClienteAtualizaRequest;
 @RequestMapping("/v1/cliente")
 public interface ClienteAPI {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	ResponseEntity<ClienteDTO> cadastra(@RequestBody @Valid ClienteForm clienteForm, UriComponentsBuilder uriBuilder);
+	ResponseEntity<ClienteResponse> cadastra(@RequestBody @Valid ClienteRequest clienteForm, UriComponentsBuilder uriBuilder);
 	
 	@GetMapping
 	@ResponseStatus(value = HttpStatus.OK)
-	List<ClienteDTO> lista();
+	List<ClienteResponse> lista();
 	
 	@PatchMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)
-	void atualiza (@PathVariable UUID id, @RequestBody @Valid ClienteFormAtualiza clienteForm);
+	void atualiza (@PathVariable UUID id, @RequestBody @Valid ClienteAtualizaRequest clienteForm);
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)

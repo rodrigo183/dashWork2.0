@@ -1,25 +1,25 @@
 package br.com.dashwork.application.api;
 import java.util.List;
+import java.util.UUID;
 import javax.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import br.com.dashwork.application.api.dto.ServicoDTO;
-import br.com.dashwork.application.api.form.ServicoForm;
+import br.com.dashwork.application.api.dto.ServicoResponse;
+import br.com.dashwork.application.api.form.ServicoRequest;
 
 @RequestMapping("/v1/servico")
 public interface ServicoAPI {
 	
 	@PostMapping
-	@ResponseStatus(code = HttpStatus.CREATED)
-	ResponseEntity<ServicoDTO> cadastra(@RequestBody @Valid ServicoForm servicoForm, UriComponentsBuilder uriBuilder);
+	@ResponseStatus(value = HttpStatus.CREATED)
+	ResponseEntity<ServicoResponse> cadastra(@RequestBody @Valid ServicoRequest servicoForm, UriComponentsBuilder uriBuilder);
 
 	@GetMapping
-	@ResponseStatus(code = HttpStatus.OK)
-	List<ServicoDTO> listaServicos();
+	@ResponseStatus(value = HttpStatus.OK)
+	List<ServicoResponse> listaServicos();
+	@GetMapping
+	@ResponseStatus(value = HttpStatus.OK)
+	List<ServicoResponse> listaPorCliente(@PathVariable UUID clienteId);
 }

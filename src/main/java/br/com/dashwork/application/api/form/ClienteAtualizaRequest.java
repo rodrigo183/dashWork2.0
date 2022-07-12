@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-public class ClienteFormAtualiza {
+public class ClienteAtualizaRequest {
 	@NotEmpty(message = "Campo deve ser preenchido.") @Size(min = 3)
 	private String nome;
 	@NotEmpty(message = "Campo deve ser preenchido.")

@@ -1,5 +1,6 @@
 package br.com.dashwork.infra;
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
@@ -38,6 +39,14 @@ public class ServicoRepositoryImplements implements ServicoService {
 		List<Servico> todosServicos = servicoRepository.findAll();
 		log.info("[Finaliza] ServicoService - listaServicos");
 		return todosServicos;
+	}
+
+	@Override
+	public List<Servico> buscaServicosPorClienteId(UUID clienteId) {
+		log.info("[Inicia] ServicoService - buscaServicosPorIdCliente ");
+		List<Servico> servicos = servicoRepository.findByClienteId(clienteId);
+		log.info("[Finaliza] ServicoService - buscaServicosPorIdCliente ");
+		return servicos;
 	}
 
 }

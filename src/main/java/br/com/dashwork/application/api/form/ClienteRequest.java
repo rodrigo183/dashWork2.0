@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 @Getter
 @Setter
-public class ClienteForm {
+public class ClienteRequest {
 	
 	@NotEmpty(message = "Campo deve ser preenchido!")@Size(min = 3, max = 255)
 	private String nome;

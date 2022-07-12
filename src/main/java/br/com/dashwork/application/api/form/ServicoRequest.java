@@ -6,7 +6,7 @@ import br.com.dashwork.domain.Aparelho;
 import br.com.dashwork.domain.Cliente;
 import br.com.dashwork.domain.Servico;
 
-public class ServicoForm {
+public class ServicoRequest {
 
 	@Valid
 	private Aparelho aparelho;

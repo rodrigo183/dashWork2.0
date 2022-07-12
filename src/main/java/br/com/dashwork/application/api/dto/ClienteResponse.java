@@ -6,18 +6,18 @@ import java.util.stream.Collectors;
 import br.com.dashwork.domain.Cliente;
 import lombok.Getter;
 @Getter
-public class ClienteDTO {
+public class ClienteResponse {
 	private UUID id;
 	private String nome;
 	private String telefone;
 
-	public ClienteDTO(Cliente cliente) {
+	public ClienteResponse(Cliente cliente) {
 		this.id = cliente.getId();
 		this.nome = cliente.getNome();
 		this.telefone = cliente.getTelefone();
 	}
 	
-	public static List<ClienteDTO> parseListDTO(List<Cliente> listaCliente) {
-		return listaCliente.stream().map(ClienteDTO::new).collect(Collectors.toList());
+	public static List<ClienteResponse> parseListDTO(List<Cliente> listaCliente) {
+		return listaCliente.stream().map(ClienteResponse::new).collect(Collectors.toList());
 	}
 }

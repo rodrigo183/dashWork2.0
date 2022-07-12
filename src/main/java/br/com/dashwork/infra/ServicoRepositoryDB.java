@@ -1,4 +1,5 @@
 package br.com.dashwork.infra;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -8,4 +9,5 @@ import br.com.dashwork.domain.Servico;
 @Repository
 public interface ServicoRepositoryDB extends MongoRepository<Servico, UUID>{
 
+    List<Servico> findByClienteId(UUID idCliente);
 }
