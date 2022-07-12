@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriComponentsBuilder;
-import br.com.dashwork.application.api.dto.ClienteResponse;
-import br.com.dashwork.application.api.form.ClienteRequest;
-import br.com.dashwork.application.api.form.ClienteAtualizaRequest;
+import br.com.dashwork.application.api.response.ClienteResponse;
+import br.com.dashwork.application.api.request.ClienteRequest;
+import br.com.dashwork.application.api.request.ClienteAtualizaRequest;
 @RequestMapping("/v1/cliente")
 public interface ClienteAPI {
 

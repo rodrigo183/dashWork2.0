@@ -1,4 +1,4 @@
-package br.com.dashwork.application.api.dto;
+package br.com.dashwork.application.api.response;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;

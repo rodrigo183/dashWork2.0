@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import br.com.dashwork.application.api.dto.ServicoResponse;
-import br.com.dashwork.application.api.form.ServicoRequest;
+import br.com.dashwork.application.api.response.ServicoResponse;
+import br.com.dashwork.application.api.request.ServicoRequest;
 
 @RequestMapping("/v1/servico")
 public interface ServicoAPI {

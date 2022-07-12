@@ -1,4 +1,4 @@
-package br.com.dashwork.application.api.form;
+package br.com.dashwork.application.api.request;
 import java.util.UUID;
 
 import javax.validation.Valid;
