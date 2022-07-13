@@ -5,8 +5,8 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
 import br.com.dashwork.application.repository.ClienteRepository;
 import br.com.dashwork.domain.Cliente;
 import lombok.AllArgsConstructor;
@@ -20,7 +20,6 @@ import lombok.extern.log4j.Log4j2;
 @Setter
 public class ClienteRepositoryImplements implements ClienteRepository {
 
-	@Autowired
 	private ClienteRepositoryDB clienteRepository;
 	
 	@Override

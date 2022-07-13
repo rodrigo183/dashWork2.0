@@ -22,7 +22,7 @@ public interface ClienteAPI {
 
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	ResponseEntity<ClienteResponse> cadastra(@RequestBody @Valid ClienteRequest clienteForm, UriComponentsBuilder uriBuilder);
+	ResponseEntity<ClienteResponse> cadastra(@RequestBody @Valid ClienteRequest clienteRequest, UriComponentsBuilder uriBuilder);
 	
 	@GetMapping
 	@ResponseStatus(value = HttpStatus.OK)
@@ -30,7 +30,7 @@ public interface ClienteAPI {
 	
 	@PatchMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)
-	void atualiza (@PathVariable UUID id, @RequestBody @Valid ClienteAtualizaRequest clienteForm);
+	void atualiza (@PathVariable UUID id, @RequestBody @Valid ClienteAtualizaRequest clienteRequest);
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus (value = HttpStatus.NO_CONTENT)

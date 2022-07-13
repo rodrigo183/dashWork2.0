@@ -3,8 +3,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import br.com.dashwork.domain.Cliente;
+import org.springframework.stereotype.Repository;
 
+import br.com.dashwork.domain.Cliente;
+@Repository
 public interface ClienteRepository {
 	Cliente salva(Cliente cliente);
 	Optional<Cliente> buscaClientePorId (UUID id);

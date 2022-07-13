@@ -1,5 +1,6 @@
 package br.com.dashwork.infra;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -42,11 +43,34 @@ public class ServicoRepositoryImplements implements ServicoService {
 	}
 
 	@Override
-	public List<Servico> buscaServicosPorClienteId(UUID clienteId) {
+	public List<Servico> buscaServicoPorClienteId(UUID clienteId) {
 		log.info("[Inicia] ServicoService - buscaServicosPorIdCliente ");
-		List<Servico> servicos = servicoRepository.findByClienteId(clienteId);
+		List<Servico> servico = servicoRepository.findByClienteId(clienteId);
 		log.info("[Finaliza] ServicoService - buscaServicosPorIdCliente ");
-		return servicos;
+		return servico;
+	}
+
+	@Override
+	public Servico atualiza(@Valid UUID servicoId, @Valid Servico servico) {
+		log.info("[Inicia] ServicoService - atualiza");
+		Servico servicoAtualizado = servicoRepository.getById(servicoId);
+		log.info("[Finaliza] ServicoService - atualiza ");
+		return servicoRepository.save(servicoAtualizado);
+	}
+
+	@Override
+	public Optional<Servico> buscaServicoPorId(@Valid UUID servicoId) {
+		log.info("[Inicia] ServicoService - buscaServicoPorId");
+		Optional<Servico> servicoPorId = servicoRepository.findById(servicoId);
+		log.info("[Finaliza] ServicoService - buscaServicoPorId");
+		return servicoPorId;
+	}
+
+	@Override
+	public void deleta(UUID servicoId) {
+		log.info("[Inicia] ServicoService - deleta ");	
+		servicoRepository.inativaServico(servicoId);
+		log.info("[Finaliza] ServicoService - deleta ");
 	}
 
 }
