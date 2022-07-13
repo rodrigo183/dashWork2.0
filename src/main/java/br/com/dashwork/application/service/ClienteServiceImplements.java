@@ -1,10 +1,11 @@
-package br.com.dashwork.application.api.service;
+package br.com.dashwork.application.service;
 import java.util.List;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.stereotype.Service;
-import br.com.dashwork.application.api.domain.Cliente;
-import br.com.dashwork.application.api.repository.ClienteRepository;
+
+import br.com.dashwork.application.repository.ClienteRepository;
+import br.com.dashwork.domain.Cliente;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
