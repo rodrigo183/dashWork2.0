@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.dashwork.application.api.request.AtualizaServicoRequest;
+import br.com.dashwork.application.api.request.ServicoRequestAtualiza;
 import br.com.dashwork.application.api.request.ServicoRequest;
 import br.com.dashwork.application.api.response.ServicoResponse;
 @RestController
-@RequestMapping("/v1/servico")
+@RequestMapping("/v1/cliente/servico")
 public interface ServiceAPI {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	ResponseEntity<ServicoResponse> cadastra(@RequestBody @Valid ServicoRequest servicoForm, UriComponentsBuilder uriBuilder);
+	ResponseEntity<ServicoResponse> cadastra(@RequestBody @Valid ServicoRequest servicoRequest, UriComponentsBuilder uriBuilder);
 	
 	@GetMapping
 	@ResponseStatus(value = HttpStatus.OK)
@@ -39,7 +39,7 @@ public interface ServiceAPI {
 	@PatchMapping("/{servicoId}")
 	@Transactional
 	@ResponseStatus(value = HttpStatus.ACCEPTED)
-	ResponseEntity<ServicoResponse> atualiza ( @PathVariable Long servicoId, @RequestBody  AtualizaServicoRequest servicoForm);
+	ResponseEntity<ServicoResponse> atualiza ( @PathVariable Long servicoId, @RequestBody  ServicoRequestAtualiza servicoRequest);
 	
 	@DeleteMapping("/{id}")
 	@Transactional

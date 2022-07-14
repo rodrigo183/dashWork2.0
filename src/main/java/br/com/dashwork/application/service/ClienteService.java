@@ -1,13 +1,19 @@
 package br.com.dashwork.application.service;
+
 import java.util.List;
 import java.util.Optional;
 
 import br.com.dashwork.domain.Cliente;
+
 public interface ClienteService {
 	Cliente salva(Cliente cliente);
+
 	List<Cliente> buscaTodos();
-	void atualiza(Long id, Cliente entidade);
+
+	void atualiza(Long id, Cliente cliente);
+
 	Optional<Cliente> buscaPorId(Long id);
+
 	void remove(Long id);
-	
+
 }

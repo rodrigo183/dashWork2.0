@@ -1,7 +1,10 @@
 package br.com.dashwork.application.service;
+
 import java.util.List;
 import java.util.Optional;
+
 import javax.validation.Valid;
+
 import org.springframework.stereotype.Service;
 
 import br.com.dashwork.application.repository.ClienteRepository;
@@ -10,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+
 @Log4j2
 @AllArgsConstructor
 @Getter
@@ -36,32 +40,31 @@ public class ClienteServiceImplements implements ClienteService {
 	}
 
 	@Override
-	public void atualiza(@Valid Long id, @Valid Cliente entidade) {
-		log.info("[Inicia] ClienteService - atualiza");
+	public void atualiza(@Valid Long id, @Valid Cliente cliente) {
+		log.info("[start] ClienteServiceImplements - atualiza");
 		buscaPorId(id);
-		Cliente clienteAtualizado = clienteRepository.getById(id);
-		clienteAtualizado.atualiza(entidade);
+		Cliente clienteAtualizado = clienteRepository.atualiza(id);
+		clienteAtualizado.atualiza(cliente);
 		clienteRepository.salva(clienteAtualizado);
-		log.info("[Finaliza] ClienteService - atualiza");
+		log.info("[finish] ClienteServiceImplements - atualiza");
 	}
 
 	@Override
 	public Optional<Cliente> buscaPorId(@Valid Long id) {
-		log.info("[Inicia] ClienteService - buscaPorId ");
+		log.info("[start] ClienteServiceImplements - buscaPorId ");
 		Optional<Cliente> clientePorId = clienteRepository.buscaClientePorId(id);
 		clientePorId.orElseThrow(() -> new IllegalArgumentException("cliente não encontrado!"));
-		log.info("[Finaliza] ClienteService - buscaPorId ");
+		log.info("[finish] ClienteServiceImplements - buscaPorId ");
 		return clientePorId;
 	}
 
 	@Override
 	public void remove(@Valid Long id) {
-		log.info("[Inicia] ClienteService - deleta ");
+		log.info("[start] ClienteServiceImplements - deleta ");
 		buscaPorId(id);
 		clienteRepository.remove(id);
-		log.info("[Finaliza] ClienteService - deleta ");
-		
+		log.info("[finish] ClienteServiceImplements - deleta ");
+
 	}
 
-	
 }

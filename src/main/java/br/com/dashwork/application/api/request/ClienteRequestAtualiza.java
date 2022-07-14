@@ -1,4 +1,5 @@
 package br.com.dashwork.application.api.request;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -6,10 +7,13 @@ import javax.validation.constraints.Size;
 import br.com.dashwork.domain.Cliente;
 import lombok.Getter;
 import lombok.Setter;
+
 @Getter
 @Setter
 public class ClienteRequestAtualiza {
-	@NotEmpty(message = "Campo deve ser preenchido.") @Size(min = 3)
+
+	@NotEmpty(message = "Campo deve ser preenchido.")
+	@Size(min = 3)
 	private String nome;
 	@NotEmpty(message = "Campo deve ser preenchido.")
 	@Pattern(regexp = "^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message = "“O numero de WhatsApp não está em um formato válido!")

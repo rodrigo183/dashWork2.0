@@ -1,6 +1,8 @@
 package br.com.dashwork.infra;
+
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.dashwork.application.repository.ClienteRepository;
@@ -9,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
+
 @Repository
 @AllArgsConstructor
 @Log4j2
@@ -17,7 +20,7 @@ import lombok.extern.log4j.Log4j2;
 public class ClienteRepositoryImplements implements ClienteRepository {
 
 	private ClienteRepositoryDB clienteRepository;
-	
+
 	@Override
 	public Cliente salva(Cliente cliente) {
 		log.info("[start] ClienteRepositoryImplements - adiciona");
@@ -43,9 +46,9 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 	}
 
 	@Override
-	public Cliente getById(Long id) {
+	public Cliente atualiza(Long id) {
 		log.info("[start] ClienteRepositoryImplements - adiciona");
-		Cliente clienteEncontrado = clienteRepository.getById(id);
+		Cliente clienteEncontrado = clienteRepository.getReferenceById(id);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");
 		return clienteEncontrado;
 	}
@@ -55,7 +58,7 @@ public class ClienteRepositoryImplements implements ClienteRepository {
 		log.info("[start] ClienteRepositoryImplements - deleta");
 		clienteRepository.deleteById(id);
 		log.info("[finish] ClienteRepositoryImplements - adiciona");
-		
+
 	}
 
 }
