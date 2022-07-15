@@ -21,7 +21,7 @@ import br.com.dashwork.application.api.request.ServicoRequestAtualiza;
 import br.com.dashwork.application.api.request.ServicoRequest;
 import br.com.dashwork.application.api.response.ServicoResponse;
 @RestController
-@RequestMapping("/v1/cliente/servico")
+@RequestMapping("/v1/servico")
 public interface ServiceAPI {
 	
 	@PostMapping
@@ -34,7 +34,7 @@ public interface ServiceAPI {
 
 	@GetMapping("/{clienteId}")
 	@ResponseStatus(value = HttpStatus.OK)
-	List<ServicoResponse> listaAtravesDoCliente(@PathVariable Long clienteId);
+	List<ServicoResponse> buscaServicosPorClienteId(@PathVariable Long clienteId);
 
 	@PatchMapping("/{servicoId}")
 	@Transactional

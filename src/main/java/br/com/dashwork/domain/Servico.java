@@ -13,9 +13,11 @@ import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
@@ -33,6 +35,9 @@ public class Servico {
 	private Aparelho aparelho;
 	@NotNull
 	private boolean ativo;
+	@NotNull
+	@Builder.Default
+	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
 
 	public void atualiza(Servico servico) {
 		this.aparelho = servico.getAparelho();

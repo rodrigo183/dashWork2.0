@@ -20,6 +20,7 @@ import lombok.extern.log4j.Log4j2;
 @AllArgsConstructor
 @RestController
 public class ServicoController implements ServiceAPI {
+	
 	private ServicoService servicoService;
 
 	@Override
@@ -41,7 +42,7 @@ public class ServicoController implements ServiceAPI {
 	}
 
 	@Override
-	public List<ServicoResponse> listaAtravesDoCliente(Long clienteId) {
+	public List<ServicoResponse> buscaServicosPorClienteId(Long clienteId) {
 		log.info("[Inicia] ServicoController - listaAtravesDoCliente ");
 		List<Servico> listaServicos = servicoService.buscaServicosPorClienteId(clienteId);
 		log.info("[Finaliza] - ServicoController - listaAtravesDoCliente ");
