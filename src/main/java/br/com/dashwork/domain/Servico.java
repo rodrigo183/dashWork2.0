@@ -34,8 +34,6 @@ public class Servico {
 	@Embedded
 	private Aparelho aparelho;
 	@NotNull
-	private boolean ativo;
-	@NotNull
 	@Builder.Default
 	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
 

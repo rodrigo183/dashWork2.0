@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.dashwork.application.api.ServiceAPI;
+import br.com.dashwork.application.api.ServicoAPI;
 import br.com.dashwork.application.api.request.ServicoRequest;
 import br.com.dashwork.application.api.request.ServicoRequestAtualiza;
 import br.com.dashwork.application.api.response.ServicoResponse;
@@ -19,7 +19,7 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @AllArgsConstructor
 @RestController
-public class ServicoController implements ServiceAPI {
+public class ServicoController implements ServicoAPI {
 	
 	private ServicoService servicoService;
 

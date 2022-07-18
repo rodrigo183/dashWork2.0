@@ -34,7 +34,7 @@ public interface ClienteAPI {
 	void atualiza (@PathVariable Long id, @RequestBody @Valid ClienteRequestAtualiza clienteRequest);
 	
 	@DeleteMapping("/{id}")
-	@ResponseStatus (value = HttpStatus.NO_CONTENT)
+	@ResponseStatus (value = HttpStatus.OK)
 	void deleta(@PathVariable Long id);
 }
 

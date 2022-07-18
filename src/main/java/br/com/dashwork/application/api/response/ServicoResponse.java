@@ -12,7 +12,6 @@ public class ServicoResponse {
 	private Long id;
 	private Long clienteId;
 	private Aparelho aparelho;
-	private boolean ativo;
 
 	public ServicoResponse(Servico servico) {
 		this.id = servico.getId();

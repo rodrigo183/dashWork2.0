@@ -22,7 +22,7 @@ import br.com.dashwork.application.api.request.ServicoRequest;
 import br.com.dashwork.application.api.response.ServicoResponse;
 @RestController
 @RequestMapping("/v1/servico")
-public interface ServiceAPI {
+public interface ServicoAPI {
 	
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
@@ -38,11 +38,11 @@ public interface ServiceAPI {
 
 	@PatchMapping("/{servicoId}")
 	@Transactional
-	@ResponseStatus(value = HttpStatus.ACCEPTED)
+	@ResponseStatus(value = HttpStatus.NO_CONTENT)
 	ResponseEntity<ServicoResponse> atualiza ( @PathVariable Long servicoId, @RequestBody  ServicoRequestAtualiza servicoRequest);
 	
 	@DeleteMapping("/{id}")
 	@Transactional
-	@ResponseStatus(value = HttpStatus.ACCEPTED)
+	@ResponseStatus(value = HttpStatus.OK)
 	ResponseEntity<ServicoResponse> deleta(@PathVariable Long id);
 }
