@@ -33,11 +33,17 @@ public class Servico {
 	@Valid
 	@Embedded
 	private Aparelho aparelho;
+<<<<<<< HEAD
 	@NotNull
 	private boolean ativo;
 	@NotNull
 	@Builder.Default
 	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
+=======
+//	@NotNull
+//	@Builder.Default
+//	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
+>>>>>>> f08efb387deb1d18c59dd3e6bdb5e5559fb38205
 
 	public void atualiza(Servico servico) {
 		this.aparelho = servico.getAparelho();
