@@ -33,9 +33,9 @@ public class Servico {
 	@Valid
 	@Embedded
 	private Aparelho aparelho;
-	@NotNull
-	@Builder.Default
-	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
+//	@NotNull
+//	@Builder.Default
+//	private StatusServico statusServico = StatusServico.EM_ORCAMENTO;
 
 	public void atualiza(Servico servico) {
 		this.aparelho = servico.getAparelho();
